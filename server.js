@@ -20,6 +20,7 @@ app.use(bodyParser.json()); //para recibir formato json
 
 //Configuracionn de rutas del API
 app.use('/api/v1/users', require('./api/v1/routes/users.routes')); //se incluye el router de usuarios v1
+app.use('/api/v1/articles', require('./api/v1/routes/articles.routes'));
 
 // app.get('/', (req, res)=>{
 //     res.send({
