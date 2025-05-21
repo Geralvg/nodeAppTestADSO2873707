@@ -1,4 +1,4 @@
-const Articleservice = require('../services/Articleservice');
+const Articleservice = require('../services/articleService');
 
 const getAllArticles = async (req,res)=>{
     const allArticles = await Articleservice.getAllArticles();
@@ -29,8 +29,8 @@ const createArticle = async (req,res)=>{
 };
 
 const updateArticle = async(req,res)=>{
-    let id = req.params.ArticleId;
-    let {title,content,idUser} = req.body;
+    let id = req.params.articleId;
+    let {title,content,UserId} = req.body;
     const updatedArticle= await Articleservice.updateArticle(id,title,content,UserId);
     if (updatedArticle) 
         res.status(200).send({ status: "OK", data: updatedArticle});
@@ -39,7 +39,7 @@ const updateArticle = async(req,res)=>{
 };
 
 const deleteArticle= async (req,res)=>{
-    let id = req.params.ArticleId;
+    let id = req.params.articleId;
     const deletedArticle = await Articleservice.deleteArticle(id);
     if (deletedArticle) 
         res.status(200).send({ status: "OK", data: deletedArticle});
