@@ -15,12 +15,14 @@ app.use(morgan('combined')); //se usa el middleware morgan para el log de petici
 app.use(bodyParser.urlencoded({extended : false})); //para recibir datos por POST
 app.use(bodyParser.json()); //para recibir formato json
 
+
 //Routes
 // app.use('/api/users', require('./api/users')); //se incluye el router de usuarios
 
 //Configuracionn de rutas del API
 app.use('/api/v1/users', require('./api/v1/routes/users.routes')); //se incluye el router de usuarios v1
 app.use('/api/v1/articles', require('./api/v1/routes/articles.routes'));
+app.use('/api/v1/categories', require('./api/v1/routes/categories.routes'));
 
 // app.get('/', (req, res)=>{
 //     res.send({
