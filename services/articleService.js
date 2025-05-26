@@ -37,7 +37,7 @@ const createArticle = async (title, content, UserId) => {
             UserId
         });
         if (newArticle) {
-            const categories = [2,3,4];
+            const categories = [1,2,3];
             await newArticle.setCategories(categories);
         }
         return newArticle;
